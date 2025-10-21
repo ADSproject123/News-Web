@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 		resultsEl.innerHTML = posts.map(p => `
 			<article class="card">
-				<a href="/post.html?id=${p.id}" aria-label="Read: ${p.title}">
+				<a href="./post.html?id=${p.id}" aria-label="Read: ${p.title}">
 					<img src="${p.image}" alt="${p.title}" loading="lazy">
 					<div class="card-content">
 						<h3 class="card-title">${p.title}</h3>

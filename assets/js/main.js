@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	function createCard(post) {
 		return `
 			<article class="card">
-				<a href="/post.html?id=${post.id}" aria-label="Read: ${post.title}">
+				<a href="./post.html?id=${post.id}" aria-label="Read: ${post.title}">
 					<img src="${post.image}" alt="${post.title}" loading="lazy">
 					<div class="card-content">
 						<h3 class="card-title">${post.title}</h3>
