@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>About Us - Daily Byte News</title>
+	<meta name="description" content="About Daily Byte News: our mission and editorial standards.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+	<header class="site-header">
+		<div class="container">
+			<a class="logo" href="/" aria-label="Daily Byte News Home">Daily<span>Byte</span>News</a>
+			<nav class="nav" aria-label="Main navigation">
+				<a href="/">Home</a>
+				<a href="/categories.html">Categories</a>
+				<a href="/about.html">About</a>
+				<a href="/contact.html">Contact</a>
+			</nav>
+		</div>
+	</header>
+
+	<main class="container">
+		<section class="hero">
+			<h1>About Us</h1>
+			<p class="subtitle">We publish concise, factual news for busy readers.</p>
+		</section>
+		<section class="content-section">
+			<p>Daily Byte News summarizes technology, business, world, and lifestyle stories with clarity. Our editorial standards emphasize accuracy, attribution, and neutrality.</p>
+			<p>We are committed to providing high-quality journalism that informs and engages our readers. Our team consists of experienced journalists and editors who are passionate about delivering news that matters.</p>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<p>&copy; <span id="year"></span> Daily Byte News. All rights reserved.</p>
+			<nav class="footer-nav" aria-label="Footer navigation">
+				<a href="/privacy.html">Privacy Policy</a>
+				<a href="/terms.html">Terms of Service</a>
+			</nav>
+		</div>
+	</footer>
+	<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+

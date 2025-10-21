@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact Us - Daily Byte News</title>
+	<meta name="description" content="Contact Daily Byte News for tips, inquiries, or feedback.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+	<header class="site-header">
+		<div class="container">
+			<a class="logo" href="/" aria-label="Daily Byte News Home">Daily<span>Byte</span>News</a>
+			<nav class="nav" aria-label="Main navigation">
+				<a href="/">Home</a>
+				<a href="/categories.html">Categories</a>
+				<a href="/about.html">About</a>
+				<a href="/contact.html">Contact</a>
+			</nav>
+		</div>
+	</header>
+
+	<main class="container">
+		<section class="hero">
+			<h1>Contact Us</h1>
+			<p class="subtitle">Send tips, corrections, or partnership requests.</p>
+		</section>
+		<section>
+			<form action="https://formspree.io/f/xbllvknk" method="POST" class="contact-form">
+				<label for="name">
+					<span>Name</span>
+					<input id="name" name="name" type="text" required>
+				</label>
+				<label for="email">
+					<span>Email</span>
+					<input id="email" name="email" type="email" required>
+				</label>
+				<label for="message">
+					<span>Message</span>
+					<textarea id="message" name="message" rows="6" required></textarea>
+				</label>
+				<button type="submit" class="btn-primary">Send Message</button>
+			</form>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<p>&copy; <span id="year"></span> Daily Byte News. All rights reserved.</p>
+			<nav class="footer-nav" aria-label="Footer navigation">
+				<a href="/privacy.html">Privacy Policy</a>
+				<a href="/terms.html">Terms of Service</a>
+			</nav>
+		</div>
+	</footer>
+	<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+
