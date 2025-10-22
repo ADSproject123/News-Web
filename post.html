@@ -10,7 +10,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="./assets/css/style.css">
 	<link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxxxxxx" crossorigin="anonymous"></script>
+	<link rel="canonical" id="canonical-link" href="/post.html">
 </head>
 <body>
 	<header class="site-header">
@@ -34,15 +34,7 @@
 		</article>
 
 		<section class="ad ad-horizontal" aria-label="Advertisement" role="complementary" style="margin-top:32px;">
-			<ins class="adsbygoogle"
-				style="display:block"
-				data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
-				data-ad-slot="0000000000"
-				data-ad-format="auto"
-				data-full-width-responsive="true"></ins>
-			<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
+			<div class="ad-box" aria-hidden="true">Advertisement area</div>
 		</section>
 	</main>
 
@@ -58,6 +50,32 @@
 
 	<script src="./assets/js/posts.js"></script>
 	<script src="./assets/js/post.js"></script>
+	<script>
+		// Inject JSON-LD Article schema and canonical URL dynamically
+		document.addEventListener('DOMContentLoaded', function () {
+			if (!window.NewsData) return;
+			const u = new URL(window.location.href);
+			const id = u.searchParams.get('id');
+			const post = window.NewsData.getPostById(id);
+			if (!post) return;
+			const canonical = document.getElementById('canonical-link');
+			if (canonical) canonical.setAttribute('href', window.location.origin + '/post.html?id=' + post.id);
+			const ld = {
+				"@context": "https://schema.org",
+				"@type": "NewsArticle",
+				headline: post.title,
+				description: post.excerpt,
+				image: [post.image],
+				datePublished: post.date,
+				author: [{ "@type": "Person", name: post.author }],
+				publisher: { "@type": "Organization", name: 'Daily Byte News' }
+			};
+			const s = document.createElement('script');
+			s.type = 'application/ld+json';
+			s.textContent = JSON.stringify(ld);
+			document.head.appendChild(s);
+		});
+	</script>
 	<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
